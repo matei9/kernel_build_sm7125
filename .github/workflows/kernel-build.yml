@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      kernel-branch:
+        required: true
+        type: string
+      release-type:
+        required: true
+        type: choice
+        options:
+        - kaihatsu
+        - seishiki
+        default: 'kaihatsu'
+      device-codename:
+        required: true
+        type: choice
+        options:
+        - a72q
+        - a52q
+
+jobs:
+  build-kernel:
+    name: Build Kernel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display parameters
+        uses: m-s-abeer/update-gha-summary-with-workflow-inputs@v1
+
+      - name: Build
+        uses: frstprjkt/kernel_build_action@main
+        with:
+          kernel-url: https://github.com/frstprjkt/valeryn_samsung_sm7125
+          kernel-branch: ${{ github.event.inputs.kernel-branch }}
+          config: vendor/lineage-${{ github.event.inputs.device-codename }}_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          aosp-clang-version: r563880
+          extra-cmd: LLVM=1 LLVM_IAS=1 KBUILD_BUILD_USER=valeryn
+          custom-package-name: valeryn_$(date +%d%H%M)_${{ github.event.inputs.device-codename }}-${{ github.event.inputs.release-type }}
