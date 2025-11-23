@@ -31,7 +31,7 @@ jobs:
       - name: Build
         uses: matei9/kernel_build_action@main
         with:
-          kernel-url: https://github.com/frstprjkt/valeryn_samsung_sm7125
+          kernel-url: https://github.com/notfleshka/valeryn_samsung_sm7125
           kernel-branch: ${{ github.event.inputs.kernel-branch }}
           config: vendor/samsung/sm7125_defconfig vendor/samsung/${{ github.event.inputs.device-codename }}.config
           arch: arm64
