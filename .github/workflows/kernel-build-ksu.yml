@@ -47,4 +47,4 @@ jobs:
           anykernel3-url: https://github.com/frstprjkt/AnyKernel3
           anykernel3-branch: ${{ github.event.inputs.device-codename }}
           extra-cmd: LLVM=1 LLVM_IAS=1 KBUILD_BUILD_USER=valeryn
-          custom-package-name: valeryn_$(date +%d%H%M)_${{ github.event.inputs.device-codename }}-${{ github.event.inputs.release-type }}
+          custom-package-name: valeryn-ksu_$(date +%d%H%M)_${{ github.event.inputs.device-codename }}-${{ github.event.inputs.release-type }}
