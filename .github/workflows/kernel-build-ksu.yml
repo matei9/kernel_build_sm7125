@@ -40,7 +40,6 @@ jobs:
           ksu-other: true
           ksu-url: https://github.com/backslashxx/KernelSU
           ksu-version: master
-          aosp-gcc: true
           aosp-clang: true
           aosp-clang-version: r563880c
           anykernel3: true

@@ -35,7 +35,6 @@ jobs:
           kernel-branch: ${{ github.event.inputs.kernel-branch }}
           config: vendor/samsung/sm7125_defconfig vendor/samsung/${{ github.event.inputs.device-codename }}.config
           arch: arm64
-          aosp-gcc: true
           aosp-clang: true
           aosp-clang-version: r563880c
           anykernel3: true
