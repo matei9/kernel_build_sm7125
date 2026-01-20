@@ -42,7 +42,7 @@ jobs:
           ksu-version: master
           aosp-gcc: true
           aosp-clang: true
-          aosp-clang-version: r563880
+          aosp-clang-version: r563880c
           anykernel3: true
           anykernel3-url: https://github.com/frstprjkt/AnyKernel3
           anykernel3-branch: ${{ github.event.inputs.device-codename }}
