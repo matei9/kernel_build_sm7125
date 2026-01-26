@@ -19,6 +19,9 @@ on:
         options:
         - a72q
         - a52q
+      build-number:
+        required: false
+        type: string
 
 jobs:
   build-kernel:
@@ -37,6 +40,7 @@ jobs:
           arch: arm64
           defconfig: vendor/samsung/sm7125_defconfig vendor/samsung/${{ github.event.inputs.device-codename }}.config
           extra-args: LLVM=1 LLVM_IAS=1 KBUILD_BUILD_USER=valeryn
+          build-number: ${{ github.event.inputs.build-number }}
 
           ksu: true
           ksu-url: https://github.com/backslashxx/KernelSU
