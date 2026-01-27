@@ -48,6 +48,7 @@ jobs:
 
           aosp-clang: true
           aosp-clang-version: r563880c
+          aosp-gcc: true
 
           anykernel3: true
           anykernel3-url: https://github.com/frstprjkt/AnyKernel3
