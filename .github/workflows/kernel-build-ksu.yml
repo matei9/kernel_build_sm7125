@@ -55,7 +55,10 @@ jobs:
           anykernel3-branch: ${{ github.event.inputs.device-codename }}
           
           package-name: valeryn-ksu_$(date +%d%H%M)_${{ github.event.inputs.device-codename }}-${{ github.event.inputs.release-type }}
+
           artifact-upload: false
           telegram-upload: true
+          telegram-api-id: ${{ secrets.TELEGRAM_API_ID }}
+          telegram-api-hash: ${{ secrets.TELEGRAM_API_HASH }}
           telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          telegram-chat-id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          telegram-target: frostg012
