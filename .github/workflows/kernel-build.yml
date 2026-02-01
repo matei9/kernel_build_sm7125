@@ -51,3 +51,7 @@ jobs:
           anykernel3-branch: ${{ github.event.inputs.device-codename }}
           
           package-name: valeryn_$(date +%d%H%M)_${{ github.event.inputs.device-codename }}-${{ github.event.inputs.release-type }}
+          artifact-upload: false
+          telegram-upload: true
+          telegram-bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram-chat-id: ${{ secrets.TELEGRAM_CHAT_ID }}
